@@ -12,7 +12,7 @@
       "@utils/*": ["utils/*"],
       "@context/*": ["context/*"],
       "@services/*": ["services/*"],
-      "@types/*": ["types/*"],
+      "@typesrc/*": ["types/*"],
     },
 
     /* Bundler mode */
