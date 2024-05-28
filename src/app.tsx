@@ -2,7 +2,7 @@ import Routes from "./pages/routes";
 import '@fontsource/roboto';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material';
 import theme from "./theme";
-import ToastsProvider from "@context/ToastsProvider";
+import ToastsProvider from "@context/Toast/ToastsProvider";
 
 
 export default function App() {
