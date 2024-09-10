@@ -1,17 +1,11 @@
 import { ListItemButton, ListItemIcon, ListItemText, styled } from "@mui/material";
-import { ICustomNavbarListItemProps, INavbarItemProps } from "@typesrc/components/Navbar";
+import { INavbarItemProps } from "@typesrc/components/Navbar";
 import { Link, useLocation } from "react-router-dom";
 
-const CustomNavbarListItem = styled(ListItemButton, {
-    shouldForwardProp: (prop) => prop !== "navbarOpen"
-})<ICustomNavbarListItemProps>(({ theme, navbarOpen }) => ({
+const CustomNavbarListItem = styled(ListItemButton)(({ theme }) => ({
     height: 48,
-    // width: navbarOpen ? "100%" : "fit-content",
     marginBottom: theme.spacing(1),
     borderRadius: 8,
-    // "& .MuiListItemIcon-root": {
-    //     minWidth: navbarOpen ? 48 : 0
-    // },
     "&.Mui-selected": {
         "&::before": {
             content: '""',
@@ -24,9 +18,14 @@ const CustomNavbarListItem = styled(ListItemButton, {
             borderRadius: 40
         },
         "& .MuiListItemIcon-root": {
-            color: theme.palette.primary.main,
-            // minWidth: navbarOpen ? 48 : 0
+            color: theme.palette.primary.main
+        },
+        "& .MuiListItemText-primary": {
+            color: theme.palette.primary.main
         }
+    },
+    "& .MuiListItemIcon-root": {
+        minWidth: 44,
     }
 }));
 
@@ -34,8 +33,7 @@ export default function NavbarItem({
     title,
     path,
     icon,
-    activeIcon,
-    navbarOpen
+    activeIcon
 }: INavbarItemProps) {
 
     const { pathname } = useLocation();
@@ -49,7 +47,6 @@ export default function NavbarItem({
             component={Link}
             to={path}
             selected={isPathActive()}
-            navbarOpen={navbarOpen}
         >
             <ListItemIcon>
                 {isPathActive() ? activeIcon : icon}

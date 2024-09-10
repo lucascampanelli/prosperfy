@@ -1,5 +1,8 @@
 import Routes from "./pages/routes";
 import '@fontsource/roboto';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto/900.css';
 import { Box, StyledEngineProvider, ThemeProvider } from '@mui/material';
 import theme from "./theme";
 import ToastsProvider from "@context/Toast/ToastsProvider";
