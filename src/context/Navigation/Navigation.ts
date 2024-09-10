@@ -6,7 +6,8 @@ export const NavigationContext = createContext<INavigationContext>({
     navbarOpen: false,
     toggleNavbar: () => {},
     closeNavbar: () => {},
-    openNavbar: () => {}
+    openNavbar: () => {},
+    getActiveItem: () => undefined
 });
 
 export const useNavigationContext = () => useContext(NavigationContext);

@@ -13,6 +13,7 @@ export interface INavigationContext {
     toggleNavbar: () => void;
     closeNavbar: () => void;
     openNavbar: () => void;
+    getActiveItem: (path: string) => INavigationItem | undefined;
 }
 
 export interface INavigationProviderProps {

@@ -13,6 +13,7 @@ export default function NavigationProvider({
     const toggleNavbar = () => setNavbarOpen(!navbarOpen);
     const closeNavbar = () => setNavbarOpen(false);
     const openNavbar = () => setNavbarOpen(true);
+    const getActiveItem = (path: string) => items.find(item => item.path === path);
 
     return (
         <NavigationContext.Provider
@@ -21,7 +22,8 @@ export default function NavigationProvider({
                 navbarOpen,
                 toggleNavbar,
                 closeNavbar,
-                openNavbar
+                openNavbar,
+                getActiveItem
             }}
         >
             {children}

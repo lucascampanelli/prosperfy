@@ -1,5 +1,6 @@
 import Navbar from "@components/Navbar";
 import MobileNavbar from "@components/Navbar/MobileNavbar";
+import Header from "@components/shared/Header";
 import { Outlet } from "react-router-dom";
 
 export default function Main() {
@@ -9,7 +10,8 @@ export default function Main() {
             <div className="hidden md:block">
                 <Navbar />
             </div>
-            <div className="flex-1">
+            <div className="flex-1 p-8">
+                <Header />
                 <Outlet />
             </div>
             <div className="md:hidden">
