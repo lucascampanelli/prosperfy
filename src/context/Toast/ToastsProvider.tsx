@@ -1,6 +1,6 @@
 import { IToast, IToastsProviderProps } from "@typesrc/context/Toasts";
 import { ToastsContext } from "./Toasts";
-import Toast from "@components/Toast";
+import Toast from "@components/shared/Toast";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 

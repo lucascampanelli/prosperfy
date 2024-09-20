@@ -1,6 +1,6 @@
 import { CancelOutlined, CheckCircleOutlined, CloseOutlined, InfoOutlined, WarningAmberOutlined } from "@mui/icons-material";
 import { Card, CardHeader, IconButton } from "@mui/material";
-import { IToastProps } from "@typesrc/components/Toast";
+import { IToastProps } from "@typesrc/components/shared/Toast";
 import { Variants, motion } from "framer-motion";
 
 const cardVariants: Variants = {
