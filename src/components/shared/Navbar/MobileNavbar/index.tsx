@@ -7,7 +7,7 @@ const CustomBottomNavigation = styled(BottomNavigation)(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
     justifyContent: "space-around",
     padding: "0.6rem",
-    height: "4.75rem",
+    height: "4.75rem"
 }))
 
 const CustomBottomNavigationAction = styled(BottomNavigationAction)(({ theme }) => ({
