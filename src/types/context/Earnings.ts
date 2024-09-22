@@ -1,14 +1,16 @@
 import { ReactNode } from "react";
 import { IAccount } from "./Accounts";
 import { IEarningSource } from "./EarningSources";
+import { IFile } from "./Files";
 
 export interface IEarning {
     id: number;
     value: number;
     date: Date;
-    earning: IEarning;
+    earnings: IEarning[];
     account: IAccount;
     source: IEarningSource;
+    file: IFile;
 }
 
 export interface IEarningsContext {

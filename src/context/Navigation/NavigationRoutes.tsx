@@ -1,4 +1,4 @@
-import { AccountBalanceWalletOutlined, AccountBalanceWalletRounded, HomeOutlined, HomeRounded, PaidOutlined, PaidRounded, PaymentsOutlined, PaymentsRounded } from "@mui/icons-material";
+import { AccountBalanceWalletOutlined, AccountBalanceWalletRounded, FileCopyOutlined, FileCopyRounded, HomeOutlined, HomeRounded, PaidOutlined, PaidRounded, PaymentsOutlined, PaymentsRounded } from "@mui/icons-material";
 import { INavigationItem } from "@typesrc/context/Navigation";
 
 export const defaultRoutes: INavigationItem[] = [
@@ -25,5 +25,11 @@ export const defaultRoutes: INavigationItem[] = [
         path: "/accounts",
         icon: <AccountBalanceWalletOutlined />,
         activeIcon: <AccountBalanceWalletRounded />
+    },
+    {
+        title: "Arquivos",
+        path: "/files",
+        icon: <FileCopyOutlined />,
+        activeIcon: <FileCopyRounded />
     }
 ];
