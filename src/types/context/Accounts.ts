@@ -4,6 +4,7 @@ export interface IAccount {
     id: number;
     name: string;
     balance: number;
+    color?: string;
     updatedAt: Date;
 }
 

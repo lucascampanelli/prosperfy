@@ -12,7 +12,9 @@ export default function Main() {
             </div>
             <div className="flex-1 p-8 pb-20 md:pb-8 overflow-auto">
                 <Header />
-                <Outlet />
+                <div className="pt-8">
+                    <Outlet />
+                </div>
                 <div className="fixed left-0 right-0 bottom-0 md:hidden">
                     <MobileNavbar />
                 </div>

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Presentation from './presentation';
 import Main from './main';
 import Dashboard from './main/dashboard';
+import Accounts from './main/accounts';
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/accounts',
-                element: <Dashboard />
+                element: <Accounts />
             },
             {
                 path: '/files',
