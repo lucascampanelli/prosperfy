@@ -10,9 +10,9 @@ export default function Main() {
             <div className="hidden md:block">
                 <Navbar />
             </div>
-            <div className="flex-1 p-8 pb-20 md:pb-8 overflow-auto">
+            <div className="flex-1 overflow-auto">
                 <Header />
-                <div className="pt-8">
+                <div className="p-4 pb-20 md:p-8 md:pb-8">
                     <Outlet />
                 </div>
                 <div className="fixed left-0 right-0 bottom-0 md:hidden">
