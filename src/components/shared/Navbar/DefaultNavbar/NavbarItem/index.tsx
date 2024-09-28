@@ -1,8 +1,8 @@
-import { ListItemButton, ListItemIcon, ListItemText, styled } from "@mui/material";
+import { ListItemButton, styled } from "@mui/material";
 import { INavbarItemProps } from "@typesrc/components/shared/Navbar";
-import { Link, useLocation } from "react-router-dom";
+import NavbarLinkItem from "./NavbarLinkItem";
 
-const CustomNavbarListItem = styled(ListItemButton)(({ theme }) => ({
+export const CustomNavbarListItem = styled(ListItemButton)(({ theme }) => ({
     height: 48,
     marginBottom: theme.spacing(1),
     borderRadius: 8,
@@ -48,24 +48,12 @@ export default function NavbarItem({
     activeIcon
 }: INavbarItemProps) {
 
-    const { pathname } = useLocation();
-
-    function isPathActive() {
-        return pathname === path;
-    }
-
     return (
-        <CustomNavbarListItem
-            component={Link}
-            to={path}
-            selected={isPathActive()}
-        >
-            <ListItemIcon>
-                {isPathActive() ? activeIcon : icon}
-            </ListItemIcon>
-            <ListItemText>
-                {title}
-            </ListItemText>
-        </CustomNavbarListItem>
+        <NavbarLinkItem
+            title={title}
+            path={path}
+            icon={icon}
+            activeIcon={activeIcon}
+        />
     );
 }

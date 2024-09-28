@@ -4,6 +4,7 @@ import { Box, IconButton, List, Tooltip, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import NavbarItem from "./NavbarItem";
+import { INavigationItem } from "@typesrc/context/Navigation";
 
 const navbarBoxVariants: Variants = {
     closed: {
@@ -21,12 +22,28 @@ export default function Navbar() {
     const { items, navbarOpen, toggleNavbar } = useNavigationContext();
 
     const [logoReferenceWidth, setLogoReferenceWidth] = useState(0);
+    const [itemsToDisplay, setItemsToDisplay] = useState<INavigationItem[]>([]);
+    const [fixedItems, setFixedItems] = useState<INavigationItem[]>([]);
 
     const logoRef = useRef<HTMLDivElement>(null);
+
+    function getItemsToDisplay() {
+        return items.filter(item => !item.fixed);
+    }
+    
+    function getFixedItems() {
+        return items.filter(item => !!item.fixed);
+    }
 
     useEffect(() => {
         setLogoReferenceWidth(logoRef.current?.clientWidth || 84);
     }, []);
+
+    useEffect(() => {
+        setItemsToDisplay(getItemsToDisplay());
+        setFixedItems(getFixedItems());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [items]);
 
     return (
         <div
@@ -87,14 +104,22 @@ export default function Navbar() {
                         </Tooltip>
                     </div>
                 </div>
-                <List className="overflow-y-auto overflow-x-hidden h-full">
-                    {items.map((item) =>
+                <List className="flex-1 overflow-y-auto overflow-x-hidden">
+                    {itemsToDisplay.map((item) =>
                         <NavbarItem
                             key={item.path}
                             {...item}
                         />
                     )}
                 </List>
+                <div className="overflow-hidden">
+                    {fixedItems.map((item) =>
+                        <NavbarItem
+                            key={item.title}
+                            {...item}
+                        />
+                    )}
+                </div>
             </MotionBox>
         </div>
     )

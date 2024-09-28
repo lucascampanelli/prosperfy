@@ -34,6 +34,10 @@ const router = createBrowserRouter([
                 path: '/files',
                 element: <Dashboard />
             },
+            {
+                path: '/settings',
+                element: <Dashboard />
+            },
         ]
     }
 ]);

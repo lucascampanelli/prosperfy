@@ -5,6 +5,7 @@ export interface INavigationItem {
     path: string;
     icon: ReactNode;
     activeIcon: ReactNode;
+    fixed?: boolean;
 }
 
 export interface INavigationContext {

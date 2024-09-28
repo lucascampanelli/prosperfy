@@ -1,4 +1,4 @@
-import Navbar from "@components/shared/Navbar";
+import Navbar from "@components/shared/Navbar/DefaultNavbar";
 import MobileNavbar from "@components/shared/Navbar/MobileNavbar";
 import Header from "@components/shared/Header";
 import { Outlet } from "react-router-dom";
