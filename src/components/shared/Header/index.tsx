@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <Box
             component="header"
-            className="sticky top-0 p-4 pt-8 md:px-8 md:pt-8 md:pb-4"
+            className="sticky z-10 top-0 p-4 pt-8 md:px-8 md:pt-8 md:pb-4"
             bgcolor="background.default"
         >
             <h1 className="text-4xl font-semibold">
