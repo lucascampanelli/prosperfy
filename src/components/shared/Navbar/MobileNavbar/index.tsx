@@ -65,12 +65,10 @@ export default function MobileNavbar() {
 
     useEffect(() => {
         handleRouteChange();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname, items])
 
     useEffect(() => {
         setItemsToShow(getItemsToShow());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [items]);
 
     return (

@@ -42,7 +42,6 @@ export default function Navbar() {
     useEffect(() => {
         setItemsToDisplay(getItemsToDisplay());
         setFixedItems(getFixedItems());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [items]);
 
     return (
