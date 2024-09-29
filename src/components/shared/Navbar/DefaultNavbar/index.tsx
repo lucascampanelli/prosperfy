@@ -59,7 +59,7 @@ export default function Navbar() {
                     duration: 0.5,
                     bounce: 0
                 }}
-                className="flex flex-col h-screen p-4 absolute z-10"
+                className="flex flex-col h-screen p-4 absolute z-30"
                 bgcolor="background.paper"
             >
                 <div className="">
