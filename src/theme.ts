@@ -13,8 +13,8 @@ const lightPalette: PaletteOptions = {
         contrastText: '#d8e0ff',
     },
     background: {
-        default: '#f4f4ff',
-        paper: '#eaebef',
+        default: '#ffffff',
+        paper: '#f0f3ff',
     },
     text: {
         primary: '#1c2750',
