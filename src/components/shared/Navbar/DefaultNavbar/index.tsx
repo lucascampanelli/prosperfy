@@ -19,7 +19,7 @@ const MotionBox = motion(Box);
 
 export default function Navbar() {
 
-    const { items, navbarOpen, toggleNavbar } = useNavigationContext();
+    const { items, navbarOpen, toggleNavbar, closeNavbar } = useNavigationContext();
 
     const [logoReferenceWidth, setLogoReferenceWidth] = useState(0);
     const [itemsToDisplay, setItemsToDisplay] = useState<INavigationItem[]>([]);
@@ -35,9 +35,28 @@ export default function Navbar() {
         return items.filter(item => !!item.fixed);
     }
 
+    function handleNavbarEscape(event: KeyboardEvent) {
+        if (event.key === "Escape") {
+            closeNavbar();
+        }
+    }
+
     useEffect(() => {
         setLogoReferenceWidth(logoRef.current?.clientWidth || 84);
     }, []);
+
+    useEffect(() => {
+        if (navbarOpen) {
+            document.addEventListener("keydown", handleNavbarEscape);
+        }
+        else {
+            document.removeEventListener("keydown", handleNavbarEscape);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleNavbarEscape);
+        }
+    }, [navbarOpen]);
 
     useEffect(() => {
         setItemsToDisplay(getItemsToDisplay());
@@ -51,6 +70,10 @@ export default function Navbar() {
                 width: `calc(${logoReferenceWidth}px + 2rem)`
             }}
         >
+            <div
+                className={`fixed inset-0 z-20 ${navbarOpen ? "block" : "hidden"}`}
+                onClick={closeNavbar}
+            />
             <MotionBox
                 initial={navbarOpen ? "open" : "closed"}
                 animate={navbarOpen ? "open" : "closed"}
