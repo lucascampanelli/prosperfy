@@ -1,6 +1,6 @@
 import { StyledEngineProvider, ThemeProvider } from "@mui/material";
 import theme from "../theme";
-import AdministratorsProvider from "./Administrators/AdministratorsProvider";
+import GroupsProvider from "./Groups/GroupsProvider";
 import NavigationProvider from "./Navigation/NavigationProvider";
 import ToastsProvider from "./Toast/ToastsProvider";
 import UsersProvider from "./Users/UsersProvider";
@@ -21,7 +21,7 @@ export default function ContextProviders({
             <ThemeProvider theme={theme}>
                 <NavigationProvider>
                     <ToastsProvider>
-                        <AdministratorsProvider>
+                        <GroupsProvider>
                             <UsersProvider>
                                 <AccountsProvider>
                                     <FilesProvider>
@@ -37,7 +37,7 @@ export default function ContextProviders({
                                     </FilesProvider>
                                 </AccountsProvider>
                             </UsersProvider>
-                        </AdministratorsProvider>
+                        </GroupsProvider>
                     </ToastsProvider>
                 </NavigationProvider>
             </ThemeProvider>
