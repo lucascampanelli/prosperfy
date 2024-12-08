@@ -6,6 +6,7 @@ export interface IFile {
     size: number;
     format: 'jpg' | 'png' | 'pdf';
     link: string;
+    uploadedAt: Date;
 }
 
 export interface IFilesContext {

@@ -3,6 +3,7 @@ import Presentation from './presentation';
 import Main from './main';
 import Dashboard from './main/dashboard';
 import Accounts from './main/accounts';
+import Files from './main/files';
 
 
 const router = createBrowserRouter([
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/files',
-                element: <Dashboard />
+                element: <Files />
             },
             {
                 path: '/settings',
