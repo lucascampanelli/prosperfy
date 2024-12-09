@@ -14,14 +14,14 @@ const lightPalette: PaletteOptions = {
     },
     background: {
         default: '#ffffff',
-        paper: '#f0f3ff',
+        paper: '#f0f2fa',
     },
     text: {
         primary: '#1c2750',
         secondary: '#5e6475',
         disabled: '#999ba8',
     },
-    divider: '#babfc7',
+    divider: '#e4e6ed',
     error: {
         main: '#ff0003',
     },
@@ -152,7 +152,38 @@ const theme = createTheme({
                     }
                 }),
             }
-        }
+        },
+        MuiTableContainer: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    borderRadius: 14,
+                    border: `1px solid ${theme.palette.divider}`,
+                })
+            }
+        },
+        MuiTableHead: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    backgroundColor: theme.palette.background.paper,
+                })
+            }
+        },
+        MuiTableRow: {
+            styleOverrides: {
+                root: {
+                    '&:last-child td': {
+                        borderBottom: 'none',
+                    }
+                }
+            }
+        },
+        MuiTableCell: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    borderBottom: `1px solid ${theme.palette.divider}`
+                })
+            }
+        },
     },
 });
 

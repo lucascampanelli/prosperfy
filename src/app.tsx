@@ -5,8 +5,12 @@ import '@fontsource/roboto/900.css';
 import { Box } from '@mui/material';
 import Routes from "./pages/routes";
 import ContextProviders from '@context/ContextProviders';
+import moment from 'moment';
+import 'moment/locale/pt';
 
 export default function App() {
+
+    moment.locale('pt');
 
     return (
         <ContextProviders>

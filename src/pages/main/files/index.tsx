@@ -1,6 +1,7 @@
 import { useFilesContext } from "@context/Files/Files";
 import { FileCopyOutlined, MoreVert } from "@mui/icons-material";
 import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import moment from "moment";
 import { formatFileSize } from "util/files";
 
 export default function Files() {
@@ -10,17 +11,8 @@ export default function Files() {
     return (
         <div>
             <TableContainer>
-                <Table
-                    sx={{
-                        borderRadius: (theme) => theme.shape.borderRadius
-                    }}
-                >
-                    <TableHead
-                        className="hidden lg:table-header-group"
-                        sx={{
-                            backgroundColor: "background.paper"
-                        }}
-                    >
+                <Table>
+                    <TableHead className="hidden lg:table-header-group">
                         <TableRow>
                             <TableCell className="w-0"></TableCell>
                             <TableCell>Nome</TableCell>
@@ -39,7 +31,7 @@ export default function Files() {
                                         {file.name}
                                     </Typography>
                                     <Typography variant="caption" color="text.secondary">
-                                        Criado em: {file.uploadedAt.toLocaleDateString()}
+                                        {moment(file.uploadedAt).format("Do MMMM YYYY")}
                                     </Typography>
                                 </TableCell>
                                 <TableCell>
