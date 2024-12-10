@@ -1,5 +1,5 @@
 import { useFilesContext } from "@context/Files/Files";
-import { FileCopyOutlined, MoreVert } from "@mui/icons-material";
+import { DownloadOutlined, FileCopyOutlined, MoreVert } from "@mui/icons-material";
 import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import moment from "moment";
 import { formatFileSize } from "util/files";
@@ -16,13 +16,18 @@ export default function Files() {
                         <TableRow>
                             <TableCell className="w-0"></TableCell>
                             <TableCell>Nome</TableCell>
-                            <TableCell>Tamanho</TableCell>
+                            <TableCell>Transação</TableCell>
+                            <TableCell>Data de upload</TableCell>
+                            <TableCell className="w-0"></TableCell>
                             <TableCell className="w-0"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {files.map((file) => (
-                            <TableRow key={file.id}>
+                            <TableRow
+                                key={file.id}
+                                hover
+                            >
                                 <TableCell>
                                     <FileCopyOutlined />
                                 </TableCell>
@@ -31,11 +36,24 @@ export default function Files() {
                                         {file.name}
                                     </Typography>
                                     <Typography variant="caption" color="text.secondary">
-                                        {moment(file.uploadedAt).format("Do MMMM YYYY")}
+                                        {formatFileSize(file.size)}
                                     </Typography>
                                 </TableCell>
                                 <TableCell>
-                                    {formatFileSize(file.size)}
+                                    Pagamento2024
+                                </TableCell>
+                                <TableCell>
+                                    <Typography variant="body2">
+                                        {moment(file.uploadedAt).format("DD [de] MMMM [de] YYYY")}
+                                    </Typography>
+                                    <Typography variant="caption" color="text.secondary">
+                                    {moment(file.uploadedAt).format("hh:mm")}
+                                    </Typography>
+                                </TableCell>
+                                <TableCell>
+                                    <IconButton>
+                                        <DownloadOutlined />
+                                    </IconButton>
                                 </TableCell>
                                 <TableCell>
                                     <IconButton>

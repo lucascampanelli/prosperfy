@@ -148,23 +148,26 @@ const theme = createTheme({
                     backgroundSize: '200%',
                     transition: 'all 0.3s',
                     '&:hover': {
-                        backgroundPosition: '70%',
+                        backgroundPosition: '70%'
                     }
                 }),
-            }
-        },
-        MuiTableContainer: {
-            styleOverrides: {
-                root: ({ theme }) => ({
-                    borderRadius: 14,
-                    border: `1px solid ${theme.palette.divider}`,
-                })
             }
         },
         MuiTableHead: {
             styleOverrides: {
                 root: ({ theme }) => ({
                     backgroundColor: theme.palette.background.paper,
+                    '& th:first-child': {
+                        borderTopLeftRadius: 14,
+                        borderBottomLeftRadius: 14
+                    },
+                    '& th:last-child': {
+                        borderTopRightRadius: 14,
+                        borderBottomRightRadius: 14
+                    },
+                    '& th': {
+                        borderBottom: 'none'
+                    }
                 })
             }
         },
@@ -172,7 +175,7 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     '&:last-child td': {
-                        borderBottom: 'none',
+                        borderBottom: 'none'
                     }
                 }
             }

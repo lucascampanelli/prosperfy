@@ -6,11 +6,11 @@ import { Box } from '@mui/material';
 import Routes from "./pages/routes";
 import ContextProviders from '@context/ContextProviders';
 import moment from 'moment';
-import 'moment/locale/pt';
+import 'moment/dist/locale/pt-br';
 
 export default function App() {
 
-    moment.locale('pt');
+    moment.locale('pt-br');
 
     return (
         <ContextProviders>
