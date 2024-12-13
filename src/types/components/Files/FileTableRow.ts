@@ -1,5 +1,5 @@
 import { IFile } from "@typesrc/context/Files";
 
-export interface IFileCardProps {
+export interface IFileTableRowProps {
     file: IFile;
 }
