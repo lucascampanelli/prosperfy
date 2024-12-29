@@ -27,12 +27,17 @@ export default function Navbar() {
 
     const logoRef = useRef<HTMLDivElement>(null);
 
+    function getItems() {
+        var itemsArray = items.filter(item => item.hidden !== 'desktop' && item.hidden !== 'all');
+        return itemsArray;
+    }
+
     function getItemsToDisplay() {
-        return items.filter(item => !item.fixed);
+        return getItems().filter(item => !item.fixed);
     }
     
     function getFixedItems() {
-        return items.filter(item => !!item.fixed);
+        return getItems().filter(item => item.fixed === 'desktop' || item.fixed === 'all');
     }
 
     function handleNavbarEscape(event: KeyboardEvent) {

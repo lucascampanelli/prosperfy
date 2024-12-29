@@ -2,6 +2,7 @@ import { INavigationItem, INavigationProviderProps } from "@typesrc/context/Navi
 import { NavigationContext } from "./Navigation";
 import { useState } from "react";
 import { defaultRoutes } from "./NavigationRoutes";
+import { pathMatches } from "util/path";
 
 export default function NavigationProvider({
     children
@@ -13,7 +14,7 @@ export default function NavigationProvider({
     const toggleNavbar = () => setNavbarOpen(!navbarOpen);
     const closeNavbar = () => setNavbarOpen(false);
     const openNavbar = () => setNavbarOpen(true);
-    const getActiveItem = (path: string) => items.find(item => item.path === path);
+    const getActiveItem = (path: string) => items.filter(item => pathMatches(item.path, path))[0];
 
     return (
         <NavigationContext.Provider

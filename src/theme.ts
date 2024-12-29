@@ -156,17 +156,17 @@ const theme = createTheme({
         MuiTableHead: {
             styleOverrides: {
                 root: ({ theme }) => ({
-                    backgroundColor: theme.palette.background.paper,
                     '& th:first-child': {
-                        borderTopLeftRadius: 14,
-                        borderBottomLeftRadius: 14
+                        borderTopLeftRadius: 8,
+                        borderBottomLeftRadius: 8
                     },
                     '& th:last-child': {
-                        borderTopRightRadius: 14,
-                        borderBottomRightRadius: 14
+                        borderTopRightRadius: 8,
+                        borderBottomRightRadius: 8
                     },
                     '& th': {
-                        borderBottom: 'none'
+                        borderBottom: 'none',
+                        backgroundColor: theme.palette.background.paper
                     }
                 })
             }
@@ -187,6 +187,34 @@ const theme = createTheme({
                 })
             }
         },
+        MuiTab: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    textTransform: 'none',
+                    borderRadius: 8,
+                    '&.Mui-selected': {
+                        backgroundColor: theme.palette.background.paper,
+                    }
+                })
+            }
+        },
+        MuiTabs: {
+            styleOverrides: {
+                indicator: {
+                    display: 'flex',
+                    justifyContent: 'center',
+                    backgroundColor: 'transparent',
+                    height: 4,
+                    marginBottom: 4,
+                    '& > div': {
+                        maxWidth: 24,
+                        width: '100%',
+                        backgroundColor: '#0033ff',
+                        borderRadius: 40
+                    }
+                }
+            }
+        }
     },
 });
 

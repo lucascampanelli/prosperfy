@@ -5,7 +5,8 @@ export interface INavigationItem {
     path: string;
     icon: ReactNode;
     activeIcon: ReactNode;
-    fixed?: boolean;
+    fixed?: 'desktop' | 'mobile' | 'all';
+    hidden?: 'desktop' | 'mobile' | 'all';
 }
 
 export interface INavigationContext {

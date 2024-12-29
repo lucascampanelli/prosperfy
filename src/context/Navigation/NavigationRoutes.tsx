@@ -1,4 +1,4 @@
-import { AccountBalanceWalletOutlined, AccountBalanceWalletRounded, FileCopyOutlined, FileCopyRounded, HomeOutlined, HomeRounded, PaidOutlined, PaidRounded, PaymentsOutlined, PaymentsRounded, Settings, SettingsOutlined } from "@mui/icons-material";
+import { AccountBalanceWalletOutlined, AccountBalanceWalletRounded, FileCopyOutlined, FileCopyRounded, HomeOutlined, HomeRounded, Menu, MenuOutlined, PaidOutlined, PaidRounded, PaymentsOutlined, PaymentsRounded, Settings, SettingsOutlined } from "@mui/icons-material";
 import { INavigationItem } from "@typesrc/context/Navigation";
 
 export const defaultRoutes: INavigationItem[] = [
@@ -37,6 +37,14 @@ export const defaultRoutes: INavigationItem[] = [
         path: "/settings",
         icon: <SettingsOutlined />,
         activeIcon: <Settings />,
-        fixed: true
+        fixed: 'desktop',
+    },
+    {
+        title: "Menu",
+        path: "/menu",
+        icon: <Menu />,
+        activeIcon: <MenuOutlined />,
+        fixed: 'mobile',
+        hidden: 'desktop'
     }
 ];

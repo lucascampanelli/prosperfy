@@ -4,6 +4,10 @@ import Main from './main';
 import Dashboard from './main/dashboard';
 import Accounts from './main/accounts';
 import Files from './main/files';
+import SettingsGeneral from './main/settings/general';
+import SettingsGroup from './main/settings/group';
+import Settings from './main/settings';
+import Menu from './main/menu';
 
 
 const router = createBrowserRouter([
@@ -37,8 +41,22 @@ const router = createBrowserRouter([
             },
             {
                 path: '/settings',
-                element: <Dashboard />
+                element: <Settings />,
+                children: [
+                    {
+                        path: '/settings/',
+                        element: <SettingsGeneral />
+                    },
+                    {
+                        path: '/settings/group/',
+                        element: <SettingsGroup />
+                    }
+                ]
             },
+            {
+                path: 'menu',
+                element: <Menu />
+            }
         ]
     }
 ]);

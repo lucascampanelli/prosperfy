@@ -3,6 +3,7 @@ import { BottomNavigation, BottomNavigationAction, styled } from "@mui/material"
 import { INavigationItem } from "@typesrc/context/Navigation";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { pathMatches } from "util/path";
 
 const CustomBottomNavigation = styled(BottomNavigation)(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -54,13 +55,14 @@ export default function MobileNavbar() {
     const [itemsToShow, setItemsToShow] = useState<INavigationItem[]>([]);
 
     function handleRouteChange() {
-        const activeIndex = itemsToShow.findIndex(item => item.path === pathname);
+        const activeIndex = itemsToShow.findIndex(item => pathMatches(item.path, pathname));
         setValue(activeIndex);
     }
 
     function getItemsToShow() {
-        const fixedItem = items.find(item => item.fixed);
-        return items.slice(0, ITEMS_TO_SHOW).concat(fixedItem ? [fixedItem] : []);
+        const fixedItem = items.find(item => item.fixed === 'mobile' || item.fixed === 'all');
+        var itemsArray = items.filter(item => item.hidden !== 'mobile' && item.hidden !== 'all');
+        return itemsArray.slice(0, ITEMS_TO_SHOW).concat(fixedItem ? [fixedItem] : []);
     }
 
     useEffect(() => {
