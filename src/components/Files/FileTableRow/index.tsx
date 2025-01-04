@@ -32,7 +32,7 @@ export default function FileTableRow({
                     {moment(file.uploadedAt).format("DD [de] MMMM [de] YYYY")}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                {moment(file.uploadedAt).format("hh:mm")}
+                    {moment(file.uploadedAt).format("hh:mm")}
                 </Typography>
             </TableCell>
             <TableCell>

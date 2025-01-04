@@ -8,6 +8,7 @@ import SettingsGeneral from './main/settings/general';
 import SettingsGroup from './main/settings/group';
 import Settings from './main/settings';
 import Menu from './main/menu';
+import Expenses from './main/expenses';
 
 
 const router = createBrowserRouter([
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/expenses',
-                element: <Dashboard />
+                element: <Expenses />
             },
             {
                 path: '/earnings',
